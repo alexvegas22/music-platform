@@ -52,4 +52,12 @@ body{
       background-color: #333;
       overflow: hidden;
   }
-  
+  .main-grid a:hover {
+        font: bold 30px Poppins, sans-serif;
+        grid-row-start:1;
+        grid-row-end:2;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(255, 56, 180, 1), rgba(211, 5, 5, 1));
+        background-clip: text;
+        color: transparent;
+  }
