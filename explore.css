@@ -17,20 +17,35 @@ body{
     flex-direction: column;
     justify-content: center;
     font-size: 2rem;
-    color:whitesmoke;
+    
     height: 100%;
     width: 100%;
     border-radius: 5px;
     transition : all 200ms;
     overflow: hidden;
-    text-align: center;
+    text-align: center; 
+      
 }
+.genre-card > a{
+    color:blueviolet;
+}
+.genre-card img{
+    filter:grayscale(100%)
+}
+
 .genre-card:hover{
-    color:whitesmoke;
     box-shadow: rgba(2,8,20,0.1) 0px 0.35em 1.175em, rgba(2,8,20,0.08) 0px 0.175em 0.5em;
-    transform: translateY(-3px) scale(1.1);
+    transform: translateY(-3px) scale(1.05);
+    filter: grayscale(0%);
+    
 }
+.genre-card:hover > a{
+    color: whitesmoke;
+    transition : all 200ms;
+}
+
+
 a{
-    color:whitesmoke;
+    color: whitesmoke;
     text-decoration: none;    
 }

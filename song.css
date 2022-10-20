@@ -1,0 +1,10 @@
+/*Modele de chanson en navigation, page explore etc*/
+.song-card{
+    display: grid;
+    
+}
+
+/*Modele de chanson dans une page de chanson*/
+.song{
+    display : flex;
+}

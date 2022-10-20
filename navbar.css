@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-body{
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body{
     background: #202020;
     color:whitesmoke; 
     font: bold 30px Poppins, sans-serif;
@@ -26,7 +32,7 @@ p{
 }
 .item a:hover {
     text-align: center;
-    background: linear-gradient(135deg, rgba(255, 56, 180, 1), rgba(211, 5, 5, 1));
+    background: linear-gradient(135deg, rgba(255, 56, 180, 1), rgb(163, 5, 211));
     -webkit-background-clip: text;
     color: transparent;
 }
@@ -39,22 +45,13 @@ p{
     gap:5px;
     text-align: center;
 }
-.item-left{
+.item:first-child{
     padding-left:1rem;
     text-align: left;
 }
-.item-right{
+.item:last-child{
     padding-right: 1rem;
     text-align: right;
-}
-body::-webkit-scrollbar{
-    width: 0.5rem;
-}
-body::-webkit-scrollbar-track{
-    background: #1e1e24;
-}
-body::-webkit-scrollbar-thumb{
-    background: #6649b8;
 }
 
 .navbar-menu{
@@ -83,4 +80,14 @@ body::-webkit-scrollbar-thumb{
     background-color: #3f3f3f;
     margin-left: 4rem;
     margin-right: 4rem;
+}
+/* Scrollbar */
+body::-webkit-scrollbar{
+    width: 0.5rem;
+}
+body::-webkit-scrollbar-track{
+    background: #1e1e24;
+}
+body::-webkit-scrollbar-thumb{
+    background: #6649b8;
 }
