@@ -45,6 +45,7 @@ p{
     gap:5px;
     text-align: center;
 }
+<<<<<<< HEAD
 .item:first-child{
     padding-left:1rem;
     text-align: left;
@@ -52,6 +53,24 @@ p{
 .item:last-child{
     padding-right: 1rem;
     text-align: right;
+=======
+.item-left{
+    padding-left:1rem;
+    text-align: left;
+}
+.item-right{
+    padding-right: 1rem;
+    text-align: right;
+}
+body::-webkit-scrollbar{
+    width: 0.5rem;
+}
+body::-webkit-scrollbar-track{
+    background: #1e1e24;
+}
+body::-webkit-scrollbar-thumb{
+    background: #6649b8;
+>>>>>>> 1e57bfec6e788b0d9ecd7aea803c6c198be77a06
 }
 
 .navbar-menu{
@@ -80,6 +99,7 @@ p{
     background-color: #3f3f3f;
     margin-left: 4rem;
     margin-right: 4rem;
+<<<<<<< HEAD
 }
 /* Scrollbar */
 body::-webkit-scrollbar{
@@ -90,4 +110,6 @@ body::-webkit-scrollbar-track{
 }
 body::-webkit-scrollbar-thumb{
     background: #6649b8;
+=======
+>>>>>>> 1e57bfec6e788b0d9ecd7aea803c6c198be77a06
 }
