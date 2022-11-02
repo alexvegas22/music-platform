@@ -11,22 +11,11 @@
 <body>
 <?php include 'navbar.inc.php';
     ?>
-    <div class="content">Sign up now
+    <div class="content">Bienvenue à Streaming!
     <div><p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ac ut consequat semper viverra nam libero justo laoreet sit. 
-        Arcu ac tortor dignissim convallis. Orci nulla pellentesque dignissim enim. 
-        Suspendisse sed nisi lacus sed viverra. 
-        Amet mauris commodo quis imperdiet massa tincidunt. 
-        Non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus. 
-        Quisque id diam vel quam elementum pulvinar. 
-        Enim ut sem viverra aliquet eget sit amet tellus. 
-        Netus et malesuada fames ac turpis. 
-        In nisl nisi scelerisque eu ultrices vitae auctor eu augue. 
-        Velit aliquet sagittis id consectetur purus ut faucibus. 
-        Vestibulum lectus mauris ultrices eros in cursus turpis. 
+        Vous pouvez écouter de la musique, créer vos propres listes de lecture et plus.
         </p></div>
+    <a href="createaccount.php">Cliquez-ici pour vous inscrire</a>
     </div>
 </body>
 </html>
