@@ -11,11 +11,13 @@
     font: bold 30px Poppins, sans-serif;
     width: auto;
     margin : auto;
+    margin-left: 4rem;
+    margin-right: 4rem;
 }
 p{
     font: 15px Poppins;
 }
-.content{
+.centered-div{
     margin-left: 4rem;
     margin-right: 4rem;
 }

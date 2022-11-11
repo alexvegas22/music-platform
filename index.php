@@ -9,9 +9,9 @@
     <title>Sign Up</title>
 </head>
 <body>
-<?php include 'navbar.inc.php';
-    ?>
-    <div class="content">Bienvenue à Streaming!
+<nav><?php include 'navbar.inc.php';
+    ?></nav>
+    <div class="centered-div">Bienvenue à Streaming!
     <div><p>
         Vous pouvez écouter de la musique, créer vos propres listes de lecture et plus.
         </p></div>
