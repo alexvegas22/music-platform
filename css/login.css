@@ -7,6 +7,7 @@ body{
 .content{
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
 input[type=text], input[type=password] {
@@ -41,14 +42,11 @@ button:hover {
 
 }
 .container {
-  background-color: #ccc;
   padding: 16px;
 }
 .container:last-of-type{
-  background-color: #383838;
   display: flex;
-  justify-content: right;
-  align-items: center;
+  justify-content: space-between;
 }
 span.psw {
   font-size: 20px;

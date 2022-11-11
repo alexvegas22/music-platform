@@ -9,9 +9,15 @@
     background: #202020;
     color:whitesmoke; 
     font: bold 30px Poppins, sans-serif;
+    width: auto;
+    margin : auto;
 }
 p{
     font: 15px Poppins;
+}
+.content{
+    margin-left: 4rem;
+    margin-right: 4rem;
 }
 .title{
     color:whitesmoke; 

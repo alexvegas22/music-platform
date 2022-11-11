@@ -61,12 +61,6 @@ body::-webkit-scrollbar-thumb{
 .navbar:hover .linktext{
     display: block;
 }
-
-.content{
-    background-color: #3f3f3f;
-    margin-left: 4rem;
-    margin-right: 4rem;
-}
 /* Scrollbar */
 body::-webkit-scrollbar{
     width: 0.5rem;

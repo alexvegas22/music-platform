@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css\explore.css">
     
+    <link rel="stylesheet" href="css\explore.css">
     <link rel="stylesheet" href="css\style.css">
     <title>Streaming</title>
 </head>
@@ -24,6 +24,7 @@
         <div class="genre-card"
         style="background-image:url(images/guitarhero\ \(2\).jpg)"><a href="genre.html">Metal</a></div>
     </div>
+    <div class="content">
     <div>Chansons du moment</div>
     <div><p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -54,5 +55,6 @@
         In nisl nisi scelerisque eu ultrices vitae auctor eu augue. 
         Velit aliquet sagittis id consectetur purus ut faucibus. 
         Vestibulum lectus mauris ultrices eros in cursus turpis. </p></div>
+        </div>
 </body>
 </html>
