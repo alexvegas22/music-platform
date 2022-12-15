@@ -1,0 +1,7 @@
+.sidebar{
+    display:flex;
+    width : 300px;
+    flex-direction: column;
+    gap:3px;
+    background-color: blueviolet;
+}

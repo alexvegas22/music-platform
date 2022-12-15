@@ -20,10 +20,12 @@
   }
 .item1 { 
     grid-area: image; 
-    width: 50%; 
+    height: 60px;
+    width: 60px;
     margin:auto;
     border-radius: 50%;
     border:whitesmoke solid 2px; }
+
 .item2 { grid-area: name; margin-top:0px ;color:blueviolet;cursor:pointer;}
 .item2:hover{color:whitesmoke}
 .item3 { grid-area: logout; font-size: 15px; margin-top: 15px;}
