@@ -1,0 +1,39 @@
+.grid-container{
+    display:grid;
+    width: 300px;
+    grid-template : 
+        "image follow" 
+        "image followers" 
+        "name like" 
+        "logout playlists" ;
+        grid-gap: 1px;
+        background-color: #202020;
+        padding: 1px;
+        text-align: center;
+        color: whitesmoke;
+}
+.grid-container :nth-child(n+4) {
+    background-color: #3e3e3e;
+    
+    padding: 10px 0;
+    font-size: 20px;
+  }
+.item1 { 
+    grid-area: image; 
+    width: 50%; 
+    margin:auto;
+    border-radius: 50%;
+    border:whitesmoke solid 2px; }
+.item2 { grid-area: name; margin-top:0px ;color:blueviolet;cursor:pointer;}
+.item2:hover{color:whitesmoke}
+.item3 { grid-area: logout; font-size: 15px; margin-top: 15px;}
+.item3:hover{color:rgb(184, 0, 0);cursor:pointer;}
+.item4 { grid-area: follow; }
+.item5 { grid-area: followers; }
+.item6 { grid-area: like; }
+.item7 { grid-area: playlists; }
+
+.item4:hover{background-color:#4e4e4e; cursor:pointer;}
+.item5:hover{background-color:#4e4e4e; cursor:pointer;}
+.item6:hover{background-color:#4e4e4e; cursor:pointer;}
+.item7:hover{background-color:#4e4e4e; cursor:pointer;}

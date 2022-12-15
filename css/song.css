@@ -1,10 +1,37 @@
-/*Modele de chanson en navigation, page explore etc*/
-.song-card{
-    display: grid;
+.song-box{
+    display:flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: #202020;
     
-}
+    
+    
 
-/*Modele de chanson dans une page de chanson*/
-.song{
-    display : flex;
+}
+.title{
+    padding-top: 5px;;
+    text-align: left;
+    margin-left: 50px;}
+.artist{
+    margin-left: 50px;
+     font-size: 15px; 
+    padding-bottom:10px; }
+.album{
+    margin-top: 50px;
+    margin-left: 50px;
+    width:200px;
+    height:200px;
+}
+img{
+    
+    height:50px;
+    width:50px;
+}
+.row{
+    display: flex;
+    background-color: blueviolet;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding-top:10px;
+    padding-bottom:10px;
 }
