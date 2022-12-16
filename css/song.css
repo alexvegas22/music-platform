@@ -17,11 +17,12 @@
      font-size: 15px; 
     padding-bottom:10px; }
 .album{
-    
+    margin-top: 50px;
+    margin-left: 50px;
     width:200px;
     height:200px;
 }
-img{
+.row>img{
     height:50px;
     width:50px;
 }

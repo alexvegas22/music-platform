@@ -8,7 +8,7 @@
         "logout playlists" ;
         grid-gap: 1px;
         background-color: #202020;
-        padding: 1px;
+        padding: 0px;
         text-align: center;
         color: whitesmoke;
 }
@@ -35,7 +35,7 @@
 .item6 { grid-area: like; }
 .item7 { grid-area: playlists; }
 
-.item4:hover{background-color:#4e4e4e; cursor:pointer;}
-.item5:hover{background-color:#4e4e4e; cursor:pointer;}
-.item6:hover{background-color:#4e4e4e; cursor:pointer;}
-.item7:hover{background-color:#4e4e4e; cursor:pointer;}
+.item4:hover{background-color:var(--light-gray); cursor:pointer;}
+.item5:hover{background-color:var(--light-gray); cursor:pointer;}
+.item6:hover{background-color:var(--light-gray); cursor:pointer;}
+.item7:hover{background-color:var(--light-gray); cursor:pointer;}
