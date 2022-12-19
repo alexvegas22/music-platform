@@ -18,5 +18,9 @@
                 <div class="item6">Liked Songs</div>
                 <div class="item7">Playlists</div>
         </div>
+        <div class="guest">
+                <div>Log in</div>
+                <div>Sign up</div>
+        </div>
 </body>
 </html>

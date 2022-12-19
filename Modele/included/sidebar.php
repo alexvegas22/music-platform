@@ -9,10 +9,18 @@
     <link rel="stylesheet" href="css\sidebar.css">
     <link rel="stylesheet" href="css\style.css">
 </head>
-<?php include 'Modele\included\sidebar.php'?>
-<?php include 'Modele\included\playlistbar.php'?>
 <body>
-   <div onclick=setSong() class = 'main-content'> Click me </div>
-    
+<div class = "background">
+    <div class="sidebar">
+        <div class="wave">W/A/V/E</div>
+        <div class="wave-section">   
+            <div>Songs</div>
+            <div>Playlists</div>
+            <div>Search</div>
+        </div>
+        <?php include 'Modele\included\profile.php';?>
+        <?php include 'Modele\included\song.php';?>
+    </div>   
+</div>
 </body>
 </html>

@@ -10,10 +10,14 @@
     --dark-gray : #3e3e3e;
     --darker-gray: #202020;
   }
-  body{
+body{
     background-color: var(--light-gray);
     color:whitesmoke; 
     font: bold 30px Poppins, sans-serif;
+}
+.main-content{
+    padding-left: 300px;
+    padding-right: 300px;
 }
 p{
     font: 15px Poppins;

@@ -6,16 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="css\style.css">
-    <title>Sign Up</title>
+    <title>Wave</title>
 </head>
+<?php include "Modele\included\sidebar.php"?>
+<?php include "Modele\included\playlistbar.php"?>
 <body>
-<nav><?php include 'navbar.inc.php';
-    ?></nav>
-    <div class="centered-div">Bienvenue à Streaming!
-    <div><p>
-        Vous pouvez écouter de la musique, créer vos propres listes de lecture et plus.
-        </p></div>
-    <a href="createaccount.php">Cliquez-ici pour vous inscrire</a>
-    </div>
 </body>
 </html>
