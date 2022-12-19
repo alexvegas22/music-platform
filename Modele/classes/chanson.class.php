@@ -23,9 +23,11 @@ class Chanson {
 		
 		return $arr;
 	}
-	public function affiche()
-	{
-		echo $this->__toString();
+	public function __toString()
+	{	
+		$str = "[".$this->getLien().",".$this->titre.",".$this->auteur.",".$this->image."]";
+		
+		return $str;
 	}
 }
 ?>

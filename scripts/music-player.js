@@ -42,6 +42,7 @@ function setSong(array){
     current_song = document.getElementById("lien");
     current_song.play();
 }
+
 function setSong_String(lien, title, artist, image){
     playing=1;
     checkSong()
