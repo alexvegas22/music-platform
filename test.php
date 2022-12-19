@@ -14,7 +14,7 @@
 $test = new Chanson("'music/LMN222DRP.wav'","'LMN222DRP'","'kaleidoplasm'","'https://freemusicarchive.org/image/?file=track_image%2FyU8zK8EaC4aOfw0GgvdrDfyY9oMpiatRA6FfFgTy.jpg&width=290&height=290&type=track'");
 ?>
 <body>
-   <p onclick=setSong_String(<?= $test->getLien()?>,<?=$test->getTitre()?>,<?=$test->getAuteur()?>,<?=$test->getImage()?>) class = 'main-content'> Click me</p>
+   <p onclick=setSong(<?php echo $test->__toString() ?>) class = 'main-content'> Click me</p>
    <p class = 'main-content' ><?php echo $test->__toString() ?></p>
 </body>
 </html>
