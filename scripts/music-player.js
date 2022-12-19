@@ -42,6 +42,18 @@ function setSong(array){
     current_song = document.getElementById("lien");
     current_song.play();
 }
+function setSong_String(lien, title, artist, image){
+    playing=1;
+    checkSong()
+    document.getElementById("lien").src=lien;
+    document.getElementById("title").innerHTML=title;
+    document.getElementById("artist").innerText=artist;
+    document.getElementById("image").src=image;
+    document.getElementById("play").src="https://img.icons8.com/ios-filled/50/null/pause--v1.png";
+    current_song = document.getElementById("lien");
+    current_song.play();
+}
+
 function skip(){
     x++;
    setSong(queue[x]);

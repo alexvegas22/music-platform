@@ -3,15 +3,17 @@
 class Profile {
 	private $nom = "Utilisateur Anonyme";
     private $username;
-    private $photo = "lien vide"
+	private $password;
+    private $photo = "lien vide";
 	private $liked_songs = array();
     private $liked_playlists = array();
     private $playlists = array();
 
-	public function __construct($n, $u, $i="\images\user.png" )	
+	public function __construct($n, $u, $p, $i="\images\user.png" )	
 	{
 		$this->nom = $n;
         $this->username = $u;
+		$this->password = $p;
         $this->photo = $i;
 
 	}	
@@ -25,19 +27,28 @@ class Profile {
 	{
 			$this->nom = $value;
 	}
+	public function getPassword()
+	{
+			return $this->password;
+	}
+	
+	public function setPassword($value)
+	{
+			$this->nom = $value;
+	}
     public function getUsername()
 	{
 			return $this->username;
 	}
 	
-    public function getImage()
+    public function getPhoto()
 	{
-			return $this->image;
+			return $this->photo;
 	}
 	
-	public function setImage($value)
+	public function setPhoto($value)
 	{
-			$this->image = $value;
+			$this->photo = $value;
 	}
 
 	
@@ -56,7 +67,7 @@ class Profile {
 	
 	public function __toString()
 	{
-		return "Profile[".$this->nom.",".$this->username.",".$this->image."]";
+		return "Profile[".$this->nom.",".$this->username.",".$this->photo."]";
 	}
 	public function affiche()
 	{

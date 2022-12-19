@@ -17,9 +17,11 @@ class Chanson {
     public function getAuteur(){return $this->auteur;}
     public function getImage(){return $this->image;}
 
-	public function __toString()
-	{
-		return "Chanson[".$this->titre.",".$this->auteur.",".$this->lien.",".$this->image."]";
+	public function __toArray()
+	{	
+		$arr = array($this->lien,$this->titre,$this->auteur,$this->image);
+		
+		return $arr;
 	}
 	public function affiche()
 	{
@@ -27,3 +29,4 @@ class Chanson {
 	}
 }
 ?>
+

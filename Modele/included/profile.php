@@ -7,10 +7,12 @@
         <link rel="stylesheet" href="css\style.css">
         <link rel="stylesheet" href="css\profile.css">
 </head>
+<?php include("Modele\classes\profile.class.php");
+$user = new Profile("Alex", "alexvegas", "root", "images\user.png" );?>
 <body>
         <div class="grid-container">
-                <img class="item1" src="images\user.png">
-                <div class="item2">User</div>
+                <img class="item1" src="<?= $user->getPhoto() ?>">
+                <div class="item2"><?= $user->getNom() ?></div>
                 <div class ="item3">Log out</div>
 
                 <div class="item4">Follows</div>
