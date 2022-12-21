@@ -9,12 +9,18 @@
     <link rel="stylesheet" href="css\sidebar.css">
     <link rel="stylesheet" href="css\style.css">
 </head>
-<?php include 'Modele\included\sidebar.php';
-     include 'Modele\included\playlistbar.php';
-$test = new Chanson("'music/LMN222DRP.wav'","'LMN222DRP'","'kaleidoplasm'","'https://freemusicarchive.org/image/?file=track_image%2FyU8zK8EaC4aOfw0GgvdrDfyY9oMpiatRA6FfFgTy.jpg&width=290&height=290&type=track'");
-?>
 <body>
-   <p onclick=setSong(<?php echo $test->__toString() ?>) class = 'main-content'> Click me</p>
-   <p class = 'main-content' ><?php echo $test->__toString() ?></p>
+<?php 
+include "Modele/included/sidebar.php";
+include "Modele/included/playlistbar.php";
+include_once "Modele/classes/chanson.class.php";
+include_once 'Modele\included\song.inc.php';
+
+    
+    
+$test = new Chanson("music/jazz2.wav","Jazz2","Unknown","images/breakcore.jpg");
+
+?>
+<div class='main-content' onclick=setSong(<?=$test->__toString()?>> <?=$test->__toString()?></div>
 </body>
 </html>

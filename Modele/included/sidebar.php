@@ -12,14 +12,15 @@
 <body>
 <div class = "background">
     <div class="sidebar">
-        <div class="wave">W/A/V/E</div>
-        <div class="wave-section">   
-            <div>Songs</div>
-            <div>Playlists</div>
-            <div>Search</div>
+        <div class="wave"><img src="images\logo2.png" ></div>
+        <div class="wave-section">  
+            <a href="songPage.php"> Songs</a> 
+            <a href="songPage.php"> Playlists</a> 
+            <a href="songPage.php"> Search</a> 
+            
         </div>
         <?php include 'Modele\included\profile.php';?>
-        <?php include 'Modele\included\song.php';?>
+        <?php include 'Modele\included\musicPlayer.php';?>
     </div>   
 </div>
 </body>

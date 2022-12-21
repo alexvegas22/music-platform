@@ -2,8 +2,8 @@
 var play = "https://img.icons8.com/ios-filled/50/null/play--v2.png";
 var pause = "https://img.icons8.com/ios-filled/50/null/pause--v1.png";
 var state = 1;
-var current_song = document.getElementById("lien"); 
-var previous_song = current_song;
+var audio = document.getElementById("lien"); 
+var previous_song = audio;
 var next_song =document.getElementById("next");
 var x = 0;
 var playing = 0;
@@ -20,16 +20,12 @@ function button(){
         document.getElementById("play").src="https://img.icons8.com/ios-filled/50/null/pause--v1.png";
         document.getElementById("lien").play();
         state=2;
-    }   
-
-    else if(state==2){
+    }else if(state==2){
         document.getElementById("play").src="https://img.icons8.com/ios-filled/50/null/play--v2.png";
         document.getElementById("lien").pause();
         state=1;
     }    
 }
-
-
 
 function setSong(array){
     playing=1;
@@ -39,36 +35,18 @@ function setSong(array){
     document.getElementById("artist").innerText=array[2];
     document.getElementById("image").src=array[3];
     document.getElementById("play").src="https://img.icons8.com/ios-filled/50/null/pause--v1.png";
-    current_song = document.getElementById("lien");
-    current_song.play();
+    audio = document.getElementById("lien");
+    audio.play();
 }
 
-function setSong_String(lien, title, artist, image){
-    playing=1;
-    checkSong()
-    document.getElementById("lien").src=lien;
-    document.getElementById("title").innerHTML=title;
-    document.getElementById("artist").innerText=artist;
-    document.getElementById("image").src=image;
-    document.getElementById("play").src="https://img.icons8.com/ios-filled/50/null/pause--v1.png";
-    current_song = document.getElementById("lien");
-    current_song.play();
-}
-
-function skip(){
+function skip(){ 
     x++;
    setSong(queue[x]);
-   
-    
-    
 }
 function previous(){
     x--;
-
-    setSong(queue[x]);
-    
+    setSong(queue[x]); 
 }
-
 
 function checkSong(){
     if (playing == 0){
@@ -79,11 +57,51 @@ function checkSong(){
         $("#no-song").hide();
         $("#song-container").show();  
     }
-    
-      
-    
-    
-              
-
-    
 }
+
+function removeSong(){
+    playing = 0;
+    checkSong();
+    document.getElementById("lien").pause();    
+}
+
+function queuePlaylist(array){
+
+}
+
+let volume = document.querySelector("#volume-control");
+volume.addEventListener("change", function(e) {
+audio.volume = e.currentTarget.value / 100;})
+
+
+const playBtn = document.getElementById("play");
+const progressEl = document.querySelector('input[type="range"]');
+let mouseDownOnSlider = false;
+
+audio.addEventListener("loadeddata", () => {
+  progressEl.value = 0;
+});
+audio.addEventListener("timeupdate", () => {
+  if (!mouseDownOnSlider) {
+    progressEl.value = audio.currentTime / audio.duration * 100;
+  }
+});
+audio.addEventListener("ended", () => {
+  playBtn.src = play;
+});
+
+playBtn.addEventListener("click", () => {
+  audio.paused ? audio.play() : audio.pause();
+  playBtn.src = audio.paused ? play : pause;
+});
+
+progressEl.addEventListener("change", () => {
+  const pct = progressEl.value / 100;
+  audio.currentTime = (audio.duration || 0) * pct;
+});
+progressEl.addEventListener("mousedown", () => {
+  mouseDownOnSlider = true;
+});
+progressEl.addEventListener("mouseup", () => {
+  mouseDownOnSlider = false;
+});

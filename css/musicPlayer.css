@@ -1,0 +1,129 @@
+.song-box{
+    display:flex;
+    flex-direction: column;
+    width: 300px;
+    
+    background-color: #202020;
+}
+.title{
+    font-size: 25px;
+    padding-top: 5px;;
+    text-align: left;
+    margin-left: 10px;}
+.artist{
+    margin-left: 10px;
+     font-size: 15px; 
+    padding-bottom:10px; }
+.album{
+    position: relative;
+    width:300px;
+    height:300px;
+}
+.row>img{
+    height:50px;
+    width:50px;
+}
+.row{
+    display: flex;
+    background-color: blueviolet;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.volume{
+    display: flex;
+    background-color: blueviolet;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.volume>img{
+    height: 35px;
+    width: 35px;
+}
+
+.no-song{
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #202020;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    
+
+}.no-song>img{
+    border-radius: 50%;
+    margin-top: 50px;
+margin-bottom: 50px;}
+
+.top-right {
+    position: absolute;
+    z-index: 999;
+    text-shadow: 1px 1px 15px blueviolet;
+    right: 16px;
+    color:whitesmoke;
+    cursor:pointer;
+  }
+
+  .volume-bar{
+    
+    width: 200px;
+    background-color: blueviolet;
+}
+
+.volume-bar::-moz-range-track {
+    width: 200px;
+    height: 5px;
+    background: black;
+    border: none;
+    border-radius: 3px;
+}
+
+.volume-bar::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: black;
+}
+
+
+.volume-bar::-moz-focusring{
+    outline: 1px solid black;
+    outline-offset: 10px;
+}
+
+.volume-bar:focus::-moz-range-track {
+    background: black;
+}
+  
+.song-tracker{
+    
+    width: 300px;
+    background-color: blueviolet;
+}
+
+.song-tracker::-moz-range-track {
+    width: 300px;
+    height: 5px;
+    background: black;
+    border: none;
+    border-radius: 3px;
+}
+.song-tracker::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: black;
+}
+.song-tracker::-moz-focusring{
+    outline: 1px solid black;
+    outline-offset: 10px;
+}
+.song-tracker:focus::-moz-range-track {
+    background: black;
+}

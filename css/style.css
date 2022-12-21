@@ -4,6 +4,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
+    
   }
   :root{
     --light-gray :#4e4e4e ;
@@ -14,11 +16,27 @@ body{
     background-color: var(--light-gray);
     color:whitesmoke; 
     font: bold 30px Poppins, sans-serif;
+    overflow-y:hidden;
+
 }
+
 .main-content{
-    padding-left: 300px;
-    padding-right: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height:99vh;
+    margin-left: 300px;
+    margin-right: 300px;
+    align-items: center;
+    justify-content:space-between;
+    overflow-y:scroll;
+    scrollbar-color: blueviolet var(--light-gray) ;
+    scrollbar-width: thin;
+    
 }
+
+
+
 p{
     font: 15px Poppins;
 }
@@ -34,12 +52,3 @@ a{
     color:blueviolet;
 text-decoration: none;}
 
-body::-webkit-scrollbar{
-    width: 0.5rem;
-}
-body::-webkit-scrollbar-track{
-    background: #1e1e24;
-}
-body::-webkit-scrollbar-thumb{
-    background: #6649b8;
-}

@@ -11,5 +11,7 @@
 <?php include "Modele\included\sidebar.php"?>
 <?php include "Modele\included\playlistbar.php"?>
 <body>
+<button>▶️</button>
+<input type="range" value="0" min="0" max="100" step="1">
 </body>
 </html>

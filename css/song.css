@@ -1,46 +1,33 @@
-.song-box{
-    display:flex;
-    flex-direction: column;
-    width: 300px;
-    
-    background-color: #202020;
-}
-.title{
-    padding-top: 5px;;
-    text-align: left;
-    margin-left: 10px;}
-.artist{
-    margin-left: 10px;
-     font-size: 15px; 
-    padding-bottom:10px; }
-.album{
-    width:300px;
-    height:300px;
-}
-.row>img{
-    height:50px;
-    width:50px;
-}
-.row{
+.song-square{
     display: flex;
-    background-color: blueviolet;
-    justify-content: space-evenly;
-    flex-direction: row;
-    padding-top:10px;
-    padding-bottom:10px;
-}
-
-.no-song{
-    display:flex;
     flex-direction: column;
-    height: 100%;
-    background-color: #202020;
-    justify-content: center;
-    align-items: center;
-    text-align:center;
+    width: 250px;
+    height : 320px;
+    background: var(--darker-gray);
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(138,43,226,1) 70%);
+    opacity: 90%;
+    border-radius: 15px;
+    text-align: center;
+    margin : 35px;
+    margin-bottom: 0px;
+    cursor:pointer;
+    padding: 15px;
+    font-size: 20px;
+}
+.song-square>img{
+    width: 150;
+    padding-bottom: 15px;
+    opacity: 100%;
+    border-radius: 15px;
     
-
-}.no-song>img{
-    border-radius: 50%;
-    margin-top: 50px;
-margin-bottom: 50px;}
+}
+.song-square>:last-child{
+    font-size: 15px;
+    color: gray;
+}
+.song-square:hover{
+    box-shadow: rgba(2,8,20,0.1) 0px 0.35em 1.175em, rgba(2,8,20,0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.05);
+    filter: grayscale(0%);
+    
+}

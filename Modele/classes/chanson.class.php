@@ -25,7 +25,7 @@ class Chanson {
 	}
 	public function __toString()
 	{	
-		$str = "[".$this->getLien().",".$this->titre.",".$this->auteur.",".$this->image."]";
+		$str = "['".$this->getLien()."','".$this->titre."','".$this->auteur."','".$this->image."']";
 		
 		return $str;
 	}

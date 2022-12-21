@@ -1,0 +1,9 @@
+.playlist{
+    margin: 50px;
+    display: flex;
+    background-color: var(--darker-gray);
+}
+.song-row{
+    display: flex;
+    flex-direction: row;
+}
