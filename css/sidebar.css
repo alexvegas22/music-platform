@@ -41,12 +41,13 @@
     color:whitesmoke;
 }
 .wave{
-    height:103px;
+    height:82px;
     
 }
 .wave>img{
     padding:0px;
     margin:0px;
     background-color:var(--darker-gray);
-    height:103px;
+
+    width:300px;
 }

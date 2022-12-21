@@ -51,6 +51,7 @@ function previous(){
 function checkSong(){
     if (playing == 0){
         $("#song-container").hide();
+
         $("#no-song").show();
     } 
     if (playing == 1){

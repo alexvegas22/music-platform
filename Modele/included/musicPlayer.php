@@ -16,7 +16,7 @@
             <div>Click on a song or playlist to start listening</div>  
     </div>
     <div id='song-container' class="song-box">
-        <div onclick=removeSong() class = "top-right">x</div>
+        <div id="x" onclick=removeSong() class = "top-right">x</div>
         <img id="image" class="album" src="" height=150px width=150px>
         <div id="title" class="title"></div>
         <div id="artist" class="artist"></div>
