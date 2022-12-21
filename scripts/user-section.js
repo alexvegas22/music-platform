@@ -1,23 +1,21 @@
-let logged = 0;
 
-function checkUser(){
-  if (logged == 1){
-      $("#guest-grid").hide();
-      $("#profile-grid").show();
-  } 
-  if (logged == 0){
-      $("#profile-grid").hide();
-      $("#guest-grid").show();  
-  }
-}
-$( document ).ready(function() {
-    $("#login").click(function() {
-      $( "#guest-grid" ).hide();
-      $( "#profile-grid" ).show();
-    });
-  
-    $("#logout").click(function() {
-      $("#profile-grid").hide();
-      $("#guest-grid").show();
-    });
+$(document).ready(function() {
+
+  $("#login").click(function() {
+    
+    $( "#guest-grid" ).hide();
+    $( "#login-grid" ).show();
+  });
+
+  $("#sign-in").click(function() {
+    $("#guest-grid").hide();
+    $( "#sign-in-grid" ).show();
+    
+  });
+  $("#annuler").click(function() {
+    
+    $( "#guest-grid" ).show();
+    $( "#login-grid" ).hide();
+  });
+
 });

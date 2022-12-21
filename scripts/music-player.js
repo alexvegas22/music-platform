@@ -48,6 +48,10 @@ function previous(){
     setSong(queue[x]); 
 }
 
+function setQueue(queue){
+  
+}
+
 function checkSong(){
     if (playing == 0){
         $("#song-container").hide();
@@ -65,9 +69,6 @@ function removeSong(){
     document.getElementById("lien").pause();    
 }
 
-function queuePlaylist(array){
-
-}
 
 let volume = document.querySelector("#volume-control");
 volume.addEventListener("change", function(e) {
@@ -105,3 +106,4 @@ progressEl.addEventListener("mousedown", () => {
 progressEl.addEventListener("mouseup", () => {
   mouseDownOnSlider = false;
 });
+

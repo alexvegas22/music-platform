@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="css\style.css">
     <link rel="stylesheet" href="css\song.css">
 </head>
+<script src="scripts/jquery-3.6.2.js"></script>
 <?php 
 include_once 'Modele\config\configDB.interface.php';
 include_once 'Modele\classes\chanson.class.php';
@@ -25,7 +27,7 @@ $req = new songRequest();
 $allSongs = $req->getAllSongs();
 
 ?>
-<body>
+<body onload=load()>
    <div class="main-content">
     <?php afficherToutesChansons($allSongs); ?>
    </div>

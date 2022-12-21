@@ -10,7 +10,7 @@
 
 <?php require_once('Modele\classes\chanson.class.php');?>
 
-<body onload="checkSong()">
+<body >
     <div id="no-song" class="no-song">
             <img onclick="checkSong()" id="cd-gif"  src="images/icons8-cd.gif" height=200px width=200px>
             <div>Click on a song or playlist to start listening</div>  

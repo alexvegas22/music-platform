@@ -1,3 +1,4 @@
+
 <?php
 include_once 'Modele\config\configDB.interface.php';
 include_once 'Modele\classes\chanson.class.php';
@@ -36,6 +37,27 @@ include_once 'Modele\classes\chanson.class.php';
 			}
         }
 
+		public function login($username, $password){
+			try {
+				$connexion = new PDO('mysql:host=localhost;dbname=wave', config::DB_USER, config::DB_PWD);
+				 $resultats = $connexion->query("SELECT username, password FROM users where username = '".$username."'");
+				$success = False;
+				while($user=$resultats->fetch())
+				{
+					if($username==$user["username"]&&$password==$user["password"]){
+						$success= True;
+					}
+				}
+				return $success;
+				$resultats->closeCursor();
+	
+			} catch (PDOException $e) {
+				echo "Erreur : ".$e->getMessage()."<br />";
+			} finally {
+				$connexion=null;
+			}
+
 	}
+}
 ?>
 
