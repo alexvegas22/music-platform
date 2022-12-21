@@ -9,3 +9,5 @@ $("#login").click(function() {
     $("#profile-grid").hide();
     $("#guest-grid").show();
   });
+
+ 
