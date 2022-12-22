@@ -1,4 +1,5 @@
 .playlist{
+    width: 800px;
     margin: 50px;
     display: flex;
     background-color: var(--darker-gray);
@@ -6,4 +7,10 @@
 .song-row{
     display: flex;
     flex-direction: row;
+}
+.play{
+    display:none;
+}
+.play:hover{
+    display:block;
 }

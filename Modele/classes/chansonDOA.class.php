@@ -44,6 +44,27 @@ include_once 'Modele\classes\chanson.class.php';
 
 		}
 
+		public function getSongId($name){
+
+			try {
+				$connexion = new PDO('mysql:host=localhost;dbname=wave', config::DB_USER, config::DB_PWD);
+				 $resultats = $connexion->query("SELECT id FROM musique where title = '".$name."'");
+				$sortie;
+				while($chanson=$resultats->fetch())
+				{
+					$sortie = $chanson['id'];
+				}
+				return $sortie;
+				$resultats->closeCursor();
+	
+			} catch (PDOException $e) {
+				echo "Erreur : ".$e->getMessage()."<br />";
+			} finally {
+				$connexion=null;
+			}
+
+		}
+
 			public function getSongsbyArtist($name){
 
 			try {

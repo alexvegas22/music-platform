@@ -5,9 +5,11 @@ class Playlist extends Chanson{
 	private $auteur = "Auteur inconnu";
 	private $Liste = array();
 
-	public function __construct($n="Liste Vide")	
+	public function __construct($n, $a, $l)	
 	{
 		$this->nom = $n;
+		$this->auteur = $a;
+		$this->Liste = $l;
 	}	
 	
 	public function getNom()
@@ -48,14 +50,9 @@ class Playlist extends Chanson{
 	
 	public function __toString()
 	{
-		$result = null;
-		$arrLength = count($this->Liste);
-		for($i = 0; $i < $arrLength; $i++) {
-		$result[] = $this->Liste(i)->__toString();
-
-		}
 		
-		return $result;
+		
+		return implode($this->Liste);
 	}
 	public function affiche()
 	{

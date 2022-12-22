@@ -15,6 +15,8 @@
 
 include_once "Modele/classes/chanson.class.php";
 include_once "Modele/classes/chansonDOA.class.php";
+include_once "Modele/classes/playlistDOA.class.php";
+include_once "Modele/classes/userDOA.class.php";
 include_once "Modele/classes/playlist.class.php";
 include_once 'Modele\included\song.inc.php';
 
@@ -22,17 +24,33 @@ include_once 'Modele\included\song.inc.php';
 
 include_once 'Modele\config\configDB.interface.php';
 
-include "Modele/included/sidebar.php";
-include "Modele/included/playlistbar.php";
+
+
 
 
     
-    $req = new songRequest();
-    $playlist = $req->getSongsbyArtist('Chrome&nbsp;System&nbsp;LTD');
+    $req = new playlistRequest();
+    $playlist = $req->getAllPlaylists();
 
-   $test = new Playlist("JazzDrumLoops",'alex',$playlist);
+   
+    for($x = 0; $x < count($playlist); $x++) {
+        echo implode($playlist[$x]);
+
+      }
+
+     /* $playlist = $req->getPlaylistSongs("RenderDistance");
+
+
+      echo implode($playlist); */
+
+      
     
-    echo $playlist;
+     $playlist =$req->getPlaylistsByAuteur("Alex");
+
+     for($x = 0; $x < count($playlist); $x++) {
+        echo $playlist[$x];
+
+      }
 
 ?>
     <div class='main-content' onclick=''>Click me</div>

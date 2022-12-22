@@ -58,7 +58,28 @@ include_once 'Modele\classes\chanson.class.php';
 				$connexion=null;
 			}
 	}
-	
+
+	public function getUserId($name){
+
+		try {
+			$connexion = new PDO('mysql:host=localhost;dbname=wave', config::DB_USER, config::DB_PWD);
+			 $resultats = $connexion->query("SELECT id FROM users where nom = '".$name."'");
+			$sortie;
+			while($user=$resultats->fetch())
+			{
+				$sortie = $user['id'];
+			}
+			return $sortie;
+			$resultats->closeCursor();
+
+		} catch (PDOException $e) {
+			echo "Erreur : ".$e->getMessage()."<br />";
+		} finally {
+			$connexion=null;
+		}
+
+	}
+
 
 }
 ?>
