@@ -10,7 +10,7 @@ function afficherProfil($profil){
         echo "<a class='item4' href='songPage.php'> My playlists</a>";
         echo "<a class='item5' href='songPage.php'> Liked Songs</a>"; 
         echo "<a href='songPage.php' class'item6'>Liked Playlists</a>";
-        echo "<a href='songPage.php' class='item7'>My profile</a> ";
+        echo "<a href='songPage.php' class='item7' style='text-decoration:line-through'>My profile</a> ";
         echo "</div>";
 
 }
