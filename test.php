@@ -30,6 +30,7 @@ include_once 'Modele\config\configDB.interface.php';
 
     
     $req = new playlistRequest();
+    
     $playlist = $req->getAllPlaylists();
 
    

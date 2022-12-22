@@ -69,12 +69,12 @@ function removeSong(){
     document.getElementById("lien").pause();    
 }
 
-
+/* volume bar */
 let volume = document.querySelector("#volume-control");
 volume.addEventListener("change", function(e) {
 audio.volume = e.currentTarget.value / 100;})
 
-
+/* song progress bar */
 const playBtn = document.getElementById("play");
 const progressEl = document.querySelector('input[type="range"]');
 let mouseDownOnSlider = false;

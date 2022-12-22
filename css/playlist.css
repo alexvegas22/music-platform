@@ -1,16 +1,42 @@
 .playlist{
     width: 800px;
+    height:120px;
     margin: 50px;
     display: flex;
     background-color: var(--darker-gray);
-}
-.song-row{
-    display: flex;
     flex-direction: row;
+    border-radius: 5px;
+    
 }
+
 .play{
-    display:none;
+    margin: 30px  20px  0 auto;
+   
+    height: 60px;
+    clear:left;
 }
+
 .play:hover{
-    display:block;
+    filter:brightness(100);
+}
+.albumcover{
+    
+    
+    -webkit-box-shadow: 10px 0px 17px -4px rgba(0,0,0,0.57);
+    -moz-box-shadow: 10px 0px 17px -4px rgba(0,0,0,0.57);
+    box-shadow: 10px 0px 17px -4px rgba(0,0,0,0.57);
+
+    border-radius: 5px 0 0 5px;
+    height:120px;
+}
+.col{
+    margin : 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+.auteur{
+    margin-top: 10px;
+    font-size: 20px;
+    color: gray;
 }
