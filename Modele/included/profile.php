@@ -7,9 +7,9 @@ function afficherProfil($profil){
         echo "<img class='item1' src='".$profil->getPhoto()."'>";
         echo "<div class='item2'>".$profil->getNom()."</div>";
         echo "<div onclick='logout()' id='logout' class ='item3'>Log out</div>";
-        echo "<a class='item4' href='songPage.php'> My playlists</a>";
-        echo "<a class='item5' href='songPage.php'> Liked Songs</a>"; 
-        echo "<a href='songPage.php' class'item6'>Liked Playlists</a>";
+        echo "<a class='item4' href='myplaylists.php'> My playlists</a>";
+        echo "<a class='item5' href='songPage.php' style='text-decoration:line-through' > Liked Songs</a>"; 
+        echo "<a href='songPage.php' class='item6' style='text-decoration:line-through' >Liked Playlists</a>";
         echo "<a href='songPage.php' class='item7'>My profile</a> ";
         echo "</div>";
 

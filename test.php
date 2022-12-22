@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +7,11 @@
     
     <link rel="stylesheet" href="css\sidebar.css">
     <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css\playlist.css">
+    <script src='scripts\music-player.js'></script>
 </head>
 <body onload='load()'>
+
 <?php 
 
 
@@ -19,7 +21,8 @@ include_once "Modele/classes/playlistDOA.class.php";
 include_once "Modele/classes/userDOA.class.php";
 include_once "Modele/classes/playlist.class.php";
 include_once 'Modele\included\song.inc.php';
-
+include_once 'Modele\included\sidebar.php';
+include_once 'Modele\included\playlist.inc.php';
 
 
 include_once 'Modele\config\configDB.interface.php';
@@ -27,33 +30,19 @@ include_once 'Modele\config\configDB.interface.php';
 
 
 
-
+?>
+<div class='main-content'><?php
     
     $req = new playlistRequest();
-    
-    $playlist = $req->getAllPlaylists();
-
-   
-    for($x = 0; $x < count($playlist); $x++) {
-        echo implode($playlist[$x]);
-
-      }
-
-     /* $playlist = $req->getPlaylistSongs("RenderDistance");
-
-
-      echo implode($playlist); */
-
+     $playlist =$req->getPlaylistByName("RenderDistance"); 
       
+     $allplaylists = $req->getAllPlaylists();
+
+    afficherAllPlaylist($allplaylists);
     
-     $playlist =$req->getPlaylistsByAuteur("Alex");
-
-     for($x = 0; $x < count($playlist); $x++) {
-        echo $playlist[$x];
-
-      }
-
 ?>
-    <div class='main-content' onclick=''>Click me</div>
+
+    <div class='main-content'  onclick="play_playlist(<?php echo $req->prepareString($playlist) ?>)">Click me</div>
+    </div>
 </body>
 </html>

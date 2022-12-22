@@ -50,13 +50,8 @@ class Playlist extends Chanson{
 	
 	public function __toString()
 	{
-		
-		
 		return implode($this->Liste);
 	}
-	public function affiche()
-	{
-		echo $this->__toString();
-	}
+	
 }
 ?>
