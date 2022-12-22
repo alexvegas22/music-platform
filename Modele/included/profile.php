@@ -1,32 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css\style.css">
-        <link rel="stylesheet" href="css\profile.css">
+<?php 
+include_once("Modele\classes\profile.class.php");
+include_once("Modele\classes\userDOA.class.php");
+
+function afficherProfil($profil){
+        echo "<div id = 'profile-grid' class='grid-container'>";
+        echo "<img class='item1' src='".$profil->getPhoto()."'>";
+        echo "<div class='item2'>".$profil->getNom()."</div>";
+        echo "<div onclick='logout()' id='logout' class ='item3'>Log out</div>";
+        echo "<a class='item4' href='songPage.php'> My playlists</a>";
+        echo "<a class='item5' href='songPage.php'> Liked Songs</a>"; 
+        echo "<a href='songPage.php' class'item6'>Liked Playlists</a>";
+        echo "<a href='songPage.php' class='item7'>My profile</a> ";
+        echo "</div>";
+
+}
+
+function afficherGuest(){
+        echo "<div id='guest-grid' class='guest'>
+        <div id='login'>Log in</div>
+        <div id='signup'>Sign up</div>
+        </div>
+        <form action='' method='post'> 
+        <div id = 'login-grid' class='login-grid'>
+            <label for='uname'>Username</label>
+            <input type='text' placeholder='Enter your username' name='uname' required>
         
-    <script src="scripts/jquery-3.6.2.js"></script>
-    <script src="scripts/user-section.js"></script>
-</head>
-<?php include("Modele\classes\profile.class.php");
-$user = new Profile("Alex", "alexvegas", "root", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png" );?>
-<body>
-        <div id = "profile-grid" class="grid-container">
-                <img class="item1" src="<?= $user->getPhoto() ?>">
-                <div class="item2"><?= $user->getNom() ?></div>
-                <div id="logout" class ="item3">Log out</div>
+            <label for='psw'>Password</label>
+            <input type='password' placeholder='Enter your password' name='psw' required>
+        
+            <button type='submit'> Connexion </button>
 
-                <div class="item4">My playlists</div>
-                <div class="item5">Liked Songs</div>
-                <div class="item6">Liked Playlists</div>
-                <div class="item7">My profile</div>
+            <div  id='annuler' class='annuler'>Annuler</div>
+          
         </div>
-        <div id="guest-grid" class="guest">
-                <div id='login'>Log in</div>
-                <div>Sign up</div>
-        </div>
-</body>
+        
+      </form>";
+            
+            if (isset($_POST['uname']) && !empty($_POST['psw'])) {
+                $username = $_POST["uname"];
+                $password = $_POST["psw"];
+		$req = new userRequest();		
+               if ($req->login($username, $password)){
+                $req = new userRequest();
+                
+                $_SESSION['user'] = $_POST['uname'];
+                afficherProfil($req->getUser($username));
+                echo "<script>$( '#guest-grid' ).hide();</script>";
+               }else {
+                  echo "<script>alert('Wrong credentials')</script>";
+               }
+        }
+            
 
-</html>
+}
+
+      
+      
+    
+?>

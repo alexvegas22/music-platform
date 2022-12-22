@@ -1,13 +1,15 @@
 <?php
-
-class Playlist {
+include_once "Modele/classes/chanson.class.php";
+class Playlist extends Chanson{
 	private $nom = "Liste Vide";
 	private $auteur = "Auteur inconnu";
 	private $Liste = array();
 
-	public function __construct($n="Liste Vide")	
+	public function __construct($n, $a, $l)	
 	{
 		$this->nom = $n;
+		$this->auteur = $a;
+		$this->Liste = $l;
 	}	
 	
 	public function getNom()
@@ -48,7 +50,9 @@ class Playlist {
 	
 	public function __toString()
 	{
-		return "Playlist[".$this->nom.",".$this->auteur."]";
+		
+		
+		return implode($this->Liste);
 	}
 	public function affiche()
 	{

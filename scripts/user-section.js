@@ -1,13 +1,21 @@
-$("#login").click(function() {
-    alert("click");
+
+$(document).ready(function() {
+
+  $("#login").click(function() {
+    
     $( "#guest-grid" ).hide();
-    $( "#profile-grid" ).show();
+    $( "#login-grid" ).show();
   });
 
-  $("#logout").click(function() {
-    alert("click");
-    $("#profile-grid").hide();
-    $("#guest-grid").show();
+  $("#sign-in").click(function() {
+    $("#guest-grid").hide();
+    $( "#sign-in-grid" ).show();
+    
+  });
+  $("#annuler").click(function() {
+    
+    $( "#guest-grid" ).show();
+    $( "#login-grid" ).hide();
   });
 
- 
+});

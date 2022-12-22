@@ -20,18 +20,10 @@ include "Modele/included/playlistbar.php";
 
 include_once "Modele\classes\chansonDOA.class.php";
 include_once 'Modele\included\song.inc.php';
-
-    
-    
-$req = new songRequest();
-$allSongs = $req->getAllSongs();
-
 ?>
 <body onload=load()>
    <div class="main-content">
-    <?php afficherToutesChansons($allSongs); ?>
+    
    </div>
 </body>
 </html>
-
-&nbsp;

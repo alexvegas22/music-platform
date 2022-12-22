@@ -9,14 +9,14 @@
 <body>
     <div class="main-content">
 <?php
-include_once "Modele\classes\chansonDOA.class.php";
-include_once "Modele\included\song.inc.php";
+include_once "Modele\classes\userDOA.class.php";
+include_once "Modele\classes\profile.class.php";
 	   
-    $req = new songRequest();
-    $song=$req->getSongbyName("Jazz1");
-    afficherUneChanson($song);
-    
+   $req = new userRequest();
+   $user = $req->getUser("admin");
+   
+    echo $user;
 	?>
     </div>
 
-    
+</body>

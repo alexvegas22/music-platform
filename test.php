@@ -9,18 +9,51 @@
     <link rel="stylesheet" href="css\sidebar.css">
     <link rel="stylesheet" href="css\style.css">
 </head>
-<body>
+<body onload='load()'>
 <?php 
-include "Modele/included/sidebar.php";
-include "Modele/included/playlistbar.php";
+
+
 include_once "Modele/classes/chanson.class.php";
+include_once "Modele/classes/chansonDOA.class.php";
+include_once "Modele/classes/playlistDOA.class.php";
+include_once "Modele/classes/userDOA.class.php";
+include_once "Modele/classes/playlist.class.php";
 include_once 'Modele\included\song.inc.php';
 
+
+
+include_once 'Modele\config\configDB.interface.php';
+
+
+
+
+
     
+    $req = new playlistRequest();
     
-$test = new Chanson("music/jazz2.wav","Jazz2","Unknown","images/breakcore.jpg");
+    $playlist = $req->getAllPlaylists();
+
+   
+    for($x = 0; $x < count($playlist); $x++) {
+        echo implode($playlist[$x]);
+
+      }
+
+     /* $playlist = $req->getPlaylistSongs("RenderDistance");
+
+
+      echo implode($playlist); */
+
+      
+    
+     $playlist =$req->getPlaylistsByAuteur("Alex");
+
+     for($x = 0; $x < count($playlist); $x++) {
+        echo $playlist[$x];
+
+      }
 
 ?>
-<div class='main-content' onclick=setSong(<?=$test->__toString()?>> <?=$test->__toString()?></div>
+    <div class='main-content' onclick=''>Click me</div>
 </body>
 </html>

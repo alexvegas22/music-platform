@@ -5,9 +5,6 @@ class Profile {
     private $username;
 	private $password;
     private $photo = "lien vide";
-	private $liked_songs = array();
-    private $liked_playlists = array();
-    private $playlists = array();
 
 	public function __construct($n, $u, $p, $i="\images\user.png" )	
 	{
@@ -52,18 +49,6 @@ class Profile {
 	}
 
 	
-	public function getLikes()
-	{
-			return $this->liked_songs;
-	}  
-	public function getPlaylists()
-	{
-			return $this->playlists;
-	}
-    public function getLikedPlaylists()
-	{
-			return $this->playlists;
-	}
 	
 	public function __toString()
 	{

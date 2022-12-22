@@ -48,6 +48,10 @@ function previous(){
     setSong(queue[x]); 
 }
 
+function setQueue(queue){
+  
+}
+
 function checkSong(){
     if (playing == 0){
         $("#song-container").hide();
@@ -65,15 +69,12 @@ function removeSong(){
     document.getElementById("lien").pause();    
 }
 
-function queuePlaylist(array){
-
-}
-
+/* volume bar */
 let volume = document.querySelector("#volume-control");
 volume.addEventListener("change", function(e) {
 audio.volume = e.currentTarget.value / 100;})
 
-
+/* song progress bar */
 const playBtn = document.getElementById("play");
 const progressEl = document.querySelector('input[type="range"]');
 let mouseDownOnSlider = false;
@@ -105,3 +106,4 @@ progressEl.addEventListener("mousedown", () => {
 progressEl.addEventListener("mouseup", () => {
   mouseDownOnSlider = false;
 });
+
