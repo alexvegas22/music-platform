@@ -24,16 +24,19 @@ include_once 'Modele\included\playlist.inc.php';
 include_once 'Modele\config\configDB.interface.php';
 include_once 'Modele\included\playlistbar.php';
 
-
-
-$req = new playlistRequest();     
-$allplaylists = $req->getAllPlaylists();
-
+$req = new playlistRequest(); 
 
 ?>
 <body onload=load()>
    <div class="main-content">
-    <?php afficherAllPlaylist($allplaylists); ?>
+    <?php   
+        
+        $request = new userRequest();
+        $name = $request->getUser($_SESSION['user']);
+        $allplaylists = $req->getPlaylistsByAuteur($name->getNom());
+        afficherAllPlaylist($allplaylists);
+        
+     ?>
    </div>
 </body>
 </html>

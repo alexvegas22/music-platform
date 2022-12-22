@@ -64,7 +64,7 @@ include_once 'Modele\classes\chanson.class.php';
 		try {
 			$connexion = new PDO('mysql:host=localhost;dbname=wave', config::DB_USER, config::DB_PWD);
 			 $resultats = $connexion->query("SELECT id FROM users where nom = '".$name."'");
-			$sortie;
+			$sortie = null;
 			while($user=$resultats->fetch())
 			{
 				$sortie = $user['id'];
