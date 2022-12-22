@@ -3,18 +3,29 @@ include_once 'Modele\config\configDB.interface.php';
 include_once 'Modele\classes\chanson.class.php';
 include_once 'Modele\classes\userDOA.class.php';
 	class playlistRequest{
+
+
+		public function prepareString($string){
+        
+			$result = '['.str_replace( "]" , "]," , $string);
+			 $result = substr($result, 0, -1).']';
+			 return $result;
+	 
+		   }
 	    
 		public  function getAllPlaylists(){
 
 			try {
 				$connexion = new PDO('mysql:host=localhost;dbname=wave', config::DB_USER, config::DB_PWD);
-				 $resultats = $connexion->query("SELECT * FROM playlist ");
-				$list=null;
+				 $resultats = $connexion->query("SELECT playlist.nom as playlistname, users.nom as username FROM playlist join users on users.id=playlist.user_id ");
+				$sortie=null;
+				$req = new playlistRequest(); 
 				while($playlist=$resultats->fetch())
 				{
-					$list[]=[$playlist["nom"],$playlist["user_id"],$playlist["id"]];
+					$array = $req->getPlaylistSongs($playlist['playlistname']);
+					$sortie[]= new Playlist($playlist["playlistname"],$playlist["username"],$array);
 				}
-				return $list;
+				return $sortie;
 				$resultats->closeCursor();
 	
 			} catch (PDOException $e) {
@@ -28,11 +39,13 @@ include_once 'Modele\classes\userDOA.class.php';
 
 			try {
 				$connexion = new PDO('mysql:host=localhost;dbname=wave', config::DB_USER, config::DB_PWD);
-				 $resultats = $connexion->query("SELECT * FROM musique where title = '".$name."'");
-				$sortie;
+				 $resultats = $connexion->query("SELECT playlist.nom as playlistname, users.nom as username FROM playlist join users on users.id=playlist.user_id where playlist.nom = '".$name."'");
+				$sortie = null;
+				$req = new playlistRequest(); 
 				while($playlist=$resultats->fetch())
 				{
-					$sortie[] = new Playlist($playlist["lien"],$playlist["title"]);
+					$array = $req->getPlaylistSongs($playlist['playlistname']);
+					$sortie= new Playlist($playlist["playlistname"],$playlist["username"],$array);
 				}
 				return $sortie;
 				$resultats->closeCursor();
@@ -84,16 +97,8 @@ include_once 'Modele\classes\userDOA.class.php';
                     {
                         $sortie[] = new playlist($playlist["playlistname"],$playlist["username"],$array);  
                     }
-                    if($sortie==null){
-                        return "No results";
-                    }else{
-                        
                         return $sortie;
-                    }
-                    
-                    
-                    
-                    $resultats->closeCursor();
+                    	$resultats->closeCursor();
         
                 } catch (PDOException $e) {
                     echo "Erreur : ".$e->getMessage()."<br />";
@@ -117,10 +122,11 @@ include_once 'Modele\classes\userDOA.class.php';
                 $req = new playlistRequest();
 					while($playlist=$resultats->fetch())
 				{
-
                     $array = $req->getPlaylistSongs($playlist['playlistname']);
-                    
-					$sortie[] = new Playlist($playlist["playlistname"],$playlist["username"],$array);
+                    $sortie[] = new Playlist($playlist["playlistname"],$playlist["username"],$array);
+
+					
+				/*	$sortie =$list->__toString(); */
 					
 				}
 				if($sortie==null){

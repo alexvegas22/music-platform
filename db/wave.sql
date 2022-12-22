@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 22, 2022 at 05:28 AM
+-- Generation Time: Dec 22, 2022 at 10:18 PM
 -- Server version: 10.5.6-MariaDB
 -- PHP Version: 5.6.18
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `wave`
 --
+CREATE DATABASE IF NOT EXISTS `wave` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `wave`;
 
 -- --------------------------------------------------------
 
@@ -26,12 +28,14 @@ SET time_zone = "+00:00";
 -- Table structure for table `musique`
 --
 
-CREATE TABLE `musique` (
+DROP TABLE IF EXISTS `musique`;
+CREATE TABLE IF NOT EXISTS `musique` (
   `lien` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `artist` varchar(255) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -61,11 +65,14 @@ INSERT INTO `musique` (`lien`, `title`, `artist`, `image`, `id`) VALUES
 -- Table structure for table `playlist`
 --
 
-CREATE TABLE `playlist` (
+DROP TABLE IF EXISTS `playlist`;
+CREATE TABLE IF NOT EXISTS `playlist` (
   `nom` varchar(100) NOT NULL,
   `user_id` int(20) NOT NULL,
-  `id` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
+  KEY `username` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `playlist`
@@ -81,11 +88,16 @@ INSERT INTO `playlist` (`nom`, `user_id`, `id`) VALUES
 -- Table structure for table `playlistsong`
 --
 
-CREATE TABLE `playlistsong` (
+DROP TABLE IF EXISTS `playlistsong`;
+CREATE TABLE IF NOT EXISTS `playlistsong` (
   `song_id` int(11) NOT NULL,
   `playlist_id` int(11) NOT NULL,
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  KEY `song_id` (`song_id`),
+  KEY `playlist_id` (`playlist_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `playlistsong`
@@ -94,8 +106,6 @@ CREATE TABLE `playlistsong` (
 INSERT INTO `playlistsong` (`song_id`, `playlist_id`, `id`) VALUES
 (7, 1, 1),
 (8, 1, 2),
-(9, 1, 3),
-(10, 1, 4),
 (11, 1, 5),
 (12, 1, 6),
 (13, 1, 7),
@@ -103,9 +113,7 @@ INSERT INTO `playlistsong` (`song_id`, `playlist_id`, `id`) VALUES
 (15, 1, 9),
 (3, 3, 19),
 (4, 3, 20),
-(5, 3, 21),
-(6, 3, 22),
-(6, 3, 26);
+(6, 3, 22);
 
 -- --------------------------------------------------------
 
@@ -113,13 +121,17 @@ INSERT INTO `playlistsong` (`song_id`, `playlist_id`, `id`) VALUES
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
   `nom` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `photo` varchar(500) NOT NULL,
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
+  KEY `myplaylists` (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -130,60 +142,6 @@ INSERT INTO `users` (`nom`, `username`, `password`, `photo`, `id`) VALUES
 ('Alex', 'alexvegas', 'root', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png', 3);
 
 --
--- Indexes for dumped tables
---
-
---
--- Indexes for table `musique`
---
-ALTER TABLE `musique`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `playlist`
---
-ALTER TABLE `playlist`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `username` (`user_id`);
-
-
---
--- Indexes for table `playlistsong`
---
-ALTER TABLE `playlistsong`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`),
-  ADD KEY `song_id` (`song_id`),
-  ADD KEY `playlist_id` (`playlist_id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `myplaylists` (`id`),
-  ADD KEY `id` (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `playlist`
---
-ALTER TABLE `playlist`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `playlistsong`
---
-ALTER TABLE `playlistsong`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
 -- Constraints for dumped tables
 --
 
@@ -192,7 +150,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `playlist`
   ADD CONSTRAINT `fk_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-
 
 --
 -- Constraints for table `playlistsong`

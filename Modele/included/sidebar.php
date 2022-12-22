@@ -12,8 +12,8 @@
         <div class="wave"><img src="images\logo2.png" ></div>
         <div class="wave-section">  
             <a href="songPage.php"> Songs</a> 
-            <a href="songPage.php"> Playlists</a> 
-            <a href="songPage.php"> Search</a> 
+            <a href="playlist.php"> Playlists</a> 
+            <a href="songPage.php" style='text-decoration:line-through'> Search</a> 
             
         </div>
         <?php

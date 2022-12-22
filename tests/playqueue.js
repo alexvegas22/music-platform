@@ -1,8 +1,5 @@
-<!doctype html>
-<html>
 
-<head>
-  <script>
+
     //This plays a file, and call a callback once it completed (if a callback is set)
 
     function play(audio, callback) {
@@ -32,13 +29,5 @@
     }
 
     function play_all() {
-      play_sound_queue([new Audio("http://www.smldesign.com/1.wav"), new Audio("http://www.smldesign.com/2.wav"), new Audio("http://www.smldesign.com/3.wav")]);
+      play_playlist([new Audio("http://www.smldesign.com/1.wav"), new Audio("http://www.smldesign.com/2.wav"), new Audio("http://www.smldesign.com/3.wav")]);
     }
-  </script>
-</head>
-
-<body>
-  <a href="javascript:;" onclick="play_all();">PLAY THIS!</a>
-</body>
-
-</html>
