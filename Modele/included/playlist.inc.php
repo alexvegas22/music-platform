@@ -7,6 +7,7 @@ include_once "Modele\classes/playlistDOA.class.php";
 function afficherPlaylist($playlist){
     $req = new playlistRequest();
     $liste = $req->prepareString($playlist);
+
     echo "
     <div class='playlist'>
         <img src='".$playlist->getImage()."' class='albumcover'>
@@ -17,7 +18,9 @@ function afficherPlaylist($playlist){
         <img src='images\play.png' class='play' onclick='play_playlist(".$liste.")'>
         
     </div>";
+    
 }
+
 function afficherAllPlaylist($uneListe){
     foreach($uneListe as $unePlaylist){
         afficherPlaylist($unePlaylist);

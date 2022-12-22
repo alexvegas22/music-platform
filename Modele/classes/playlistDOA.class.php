@@ -6,10 +6,11 @@ include_once 'Modele\classes\userDOA.class.php';
 
 
 		public function prepareString($string){
-        
+			
 			$result = '['.str_replace( "]" , "]," , $string);
-			 $result = substr($result, 0, -1).']';
-			 return $result;
+			$result = str_replace('=', '/', $result);
+			$result = substr($result, 0, -1).']';
+			return $result;
 	 
 		   }
 	    
