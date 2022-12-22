@@ -1,6 +1,6 @@
 <?php
-
-class Playlist {
+include_once "Modele/classes/chanson.class.php";
+class Playlist extends Chanson{
 	private $nom = "Liste Vide";
 	private $auteur = "Auteur inconnu";
 	private $Liste = array();
@@ -48,7 +48,14 @@ class Playlist {
 	
 	public function __toString()
 	{
-		return "Playlist[".$this->nom.",".$this->auteur."]";
+		$result = null;
+		$arrLength = count($this->Liste);
+		for($i = 0; $i < $arrLength; $i++) {
+		$result[] = $this->Liste(i)->__toString();
+
+		}
+		
+		return $result;
 	}
 	public function affiche()
 	{

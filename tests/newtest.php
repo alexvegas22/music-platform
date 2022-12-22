@@ -15,25 +15,19 @@
     }
 
     //Changed the name to better reflect the functionality
-    function play_sound_queue(sounds) {
-      var index = 0;
+    function play_playlist(playlist) {
+      var x = 0;
       function recursive_play() {
-        //If the index is the last of the table, play the sound
-        //without running a callback after       
-        if (index + 1 === sounds.length) {
-          play(sounds[index], null);
+      
+        if (index + 1 === playlist.length) {
+          play(playlist[x], null);
         } else {
-          //Else, play the sound, and when the playing is complete
-          //increment index by one and play the sound in the 
-          //indexth position of the array
-          play(sounds[index], function() {
-            index++;
+          play(playlist[x], function() {
+            x++;
             recursive_play();
           });
         }
       }
-
-      //Call the recursive_play for the first time
       recursive_play();
     }
 

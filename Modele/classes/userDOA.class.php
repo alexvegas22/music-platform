@@ -45,6 +45,7 @@ include_once 'Modele\classes\chanson.class.php';
 				while($user=$resultats->fetch())
 				{
 					if($username==$user["username"]&&$password==$user["password"]){
+						
 						$success= True;
 					}
 				}
@@ -56,8 +57,9 @@ include_once 'Modele\classes\chanson.class.php';
 			} finally {
 				$connexion=null;
 			}
-
 	}
+	
+
 }
 ?>
 

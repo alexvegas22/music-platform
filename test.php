@@ -9,18 +9,32 @@
     <link rel="stylesheet" href="css\sidebar.css">
     <link rel="stylesheet" href="css\style.css">
 </head>
-<body>
+<body onload='load()'>
 <?php 
-include "Modele/included/sidebar.php";
-include "Modele/included/playlistbar.php";
+
+
 include_once "Modele/classes/chanson.class.php";
+include_once "Modele/classes/chansonDOA.class.php";
+include_once "Modele/classes/playlist.class.php";
 include_once 'Modele\included\song.inc.php';
 
+
+
+include_once 'Modele\config\configDB.interface.php';
+
+include "Modele/included/sidebar.php";
+include "Modele/included/playlistbar.php";
+
+
     
+    $req = new songRequest();
+    $playlist = $req->getSongsbyArtist('Chrome&nbsp;System&nbsp;LTD');
+
+   $test = new Playlist("JazzDrumLoops",'alex',$playlist);
     
-$test = new Chanson("music/jazz2.wav","Jazz2","Unknown","images/breakcore.jpg");
+    echo $playlist;
 
 ?>
-<div class='main-content' onclick=setSong(<?=$test->__toString()?>> <?=$test->__toString()?></div>
+    <div class='main-content' onclick=''>Click me</div>
 </body>
 </html>

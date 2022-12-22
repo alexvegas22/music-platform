@@ -5,7 +5,7 @@
 <script src="scripts/jquery-3.6.2.js"></script>
 <script src="scripts/user-section.js"></script>
 <script src="scripts/sidebar-handler.js"></script>
-<script src="scripts/ajax.js"></script>
+
     
 <div  class = "background" >
     <div class="sidebar">
@@ -30,12 +30,12 @@
             $profil = $req->getUser($_SESSION['user']);
             afficherProfil($profil);
          } else{
+            
             afficherGuest();
          }
          
          
          include 'Modele\included\musicPlayer.php';?>
-         
     </div>   
 </div>
 

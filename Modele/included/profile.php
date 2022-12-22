@@ -6,7 +6,7 @@ function afficherProfil($profil){
         echo "<div id = 'profile-grid' class='grid-container'>";
         echo "<img class='item1' src='".$profil->getPhoto()."'>";
         echo "<div class='item2'>".$profil->getNom()."</div>";
-        echo "<div onclick='annuler()' id='logout' class ='item3'>Log out</div>";
+        echo "<div onclick='logout()' id='logout' class ='item3'>Log out</div>";
         echo "<a class='item4' href='songPage.php'> My playlists</a>";
         echo "<a class='item5' href='songPage.php'> Liked Songs</a>"; 
         echo "<a href='songPage.php' class'item6'>Liked Playlists</a>";
@@ -42,11 +42,12 @@ function afficherGuest(){
 		$req = new userRequest();		
                if ($req->login($username, $password)){
                 $req = new userRequest();
+                
                 $_SESSION['user'] = $_POST['uname'];
                 afficherProfil($req->getUser($username));
                 echo "<script>$( '#guest-grid' ).hide();</script>";
                }else {
-                  echo "<div class='erreur'> Wrong credentials</div>";
+                  echo "<script>alert('Wrong credentials')</script>";
                }
         }
             

@@ -3,14 +3,15 @@ function load(){
     $("#login-grid").hide();
 }
 
-function annuler(){
-   alert("click");
-   $.ajax({
-    type: "POST",
-    url: "logout.php"
-  })
-
+function logout() {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+        document.location = 'index.php';
+    }
+    xhr.open('GET', 'Modele/controller/logout.php', true);
+    xhr.send();
 }
+
 
 
     $("#login").click(function() {
