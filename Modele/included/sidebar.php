@@ -9,7 +9,7 @@
     
 <div  class = "background" >
     <div class="sidebar">
-        <div class="wave"><img src="images\logo2.png" ></div>
+        <a href='index.php' class="wave"><img src="images\logo2.png" ></a>
         <div class="wave-section">  
             <a href="songPage.php"> Songs</a> 
             <a href="playlist.php"> Playlists</a> 
